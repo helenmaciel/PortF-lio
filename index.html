@@ -30,7 +30,6 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Para permitir que os itens se ajustem */
         }
 
         nav ul li {
@@ -45,29 +44,26 @@
 
         .hero {
             text-align: center;
-            padding: 50px 20px; /* Ajuste do padding */
+            padding: 50px 0;
         }
 
         .hero img {
-            width: 100%; /* Ajusta para 100% do container */
-            max-width: 400px; /* Limite de largura */
+            width: 400px; /* Tamanho da logo */
             height: auto;
-            border-radius: 8px;
+            border-radius: 8px; /* Bordas arredondadas na logo */
         }
 
         .hero-images {
             display: flex;
             justify-content: center;
             margin-top: 20px;
-            flex-wrap: wrap; /* Para permitir que as imagens se ajustem */
         }
 
         .hero-images img {
-            width: 100%; /* Ajusta para 100% do container */
-            max-width: 350px; /* Limite de largura */
+            width: 350px; /* Tamanho das imagens adicionais */
             height: auto;
             margin: 0 10px;
-            border-radius: 8px;
+            border-radius: 8px; /* Bordas arredondadas nas imagens adicionais */
         }
 
         section {
@@ -82,13 +78,13 @@
 
         h2 {
             color: #242b83;
-            font-size: 24px;
+            font-size: 24px; /* Tamanho do subtítulo */
         }
 
         p {
-            font-size: 18px;
+            font-size: 18px; /* Aumentar o tamanho do parágrafo */
             margin: 10px 0;
-            text-align: center;
+            text-align: center; /* Centralizar o parágrafo */
         }
 
         .servicos {
@@ -101,7 +97,6 @@
             margin: 10px;
             text-align: center;
             max-width: 300px;
-            flex: 1 1 200px; /* Flexível e responsivo */
         }
 
         .servico img {
@@ -142,23 +137,6 @@
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 30px 10px; /* Menos padding em telas menores */
-            }
-
-            .servicos {
-                flex-direction: column; /* Muda a direção dos serviços para coluna */
-                align-items: center; /* Centraliza os itens */
-            }
-
-            .servico {
-                max-width: 100%; /* Permite que os serviços ocupem a largura total */
-                margin: 10px 0; /* Margem vertical entre serviços */
-            }
         }
     </style>
 </head>
@@ -251,4 +229,18 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
-    </main
+    </main>
+
+    <footer>
+        <p>&copy; 2024 World Soluções. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Mensagem enviada com sucesso!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
