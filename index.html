@@ -29,11 +29,12 @@
             list-style: none;
             padding: 0;
             display: flex;
+            flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte */
             justify-content: center;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 10px; /* Menor espaçamento para caber melhor em telas pequenas */
         }
 
         nav ul li a {
@@ -44,26 +45,15 @@
 
         .hero {
             text-align: center;
-            padding: 50px 0;
+            padding: 20px; /* Ajuste do padding */
         }
 
         .hero img {
-            width: 400px; /* Tamanho da logo */
+            width: 90%; /* Ajusta a largura para 90% da tela */
+            max-width: 400px; /* Limita o tamanho máximo */
             height: auto;
             border-radius: 8px; /* Bordas arredondadas na logo */
-        }
-
-        .hero-images {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .hero-images img {
-            width: 350px; /* Tamanho das imagens adicionais */
-            height: auto;
-            margin: 0 10px;
-            border-radius: 8px; /* Bordas arredondadas nas imagens adicionais */
+            margin-bottom: 10px; /* Espaço entre as imagens */
         }
 
         section {
@@ -82,14 +72,14 @@
         }
 
         p {
-            font-size: 18px; /* Aumentar o tamanho do parágrafo */
+            font-size: 16px; /* Tamanho do parágrafo */
             margin: 10px 0;
             text-align: center; /* Centralizar o parágrafo */
         }
 
         .servicos {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Permite que os serviços quebrem para a linha seguinte */
             justify-content: center;
         }
 
@@ -97,6 +87,7 @@
             margin: 10px;
             text-align: center;
             max-width: 300px;
+            flex: 1 1 45%; /* Permite que os serviços se ajustem melhor em telas pequenas */
         }
 
         .servico img {
@@ -138,6 +129,17 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
+        /* Estilo responsivo para telas menores */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 20px; /* Reduzir o tamanho do subtítulo */
+            }
+
+            p {
+                font-size: 14px; /* Reduzir o tamanho do parágrafo */
+            }
+        }
     </style>
 </head>
 <body>
@@ -165,6 +167,7 @@
                 <img src="imagens/lento.jpeg" alt="Imagem 3">
             </div>
         </section>
+        
         <section id="sobre">
             <h2>Sobre Nós</h2>
             <p>Somos a World Soluções, especialistas em manutenção técnica de equipamentos tecnológicos. Com ampla experiência no mercado, garantimos serviços rápidos e eficazes para assegurar o funcionamento eficiente dos seus equipamentos.</p>
@@ -237,10 +240,10 @@
 
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Mensagem enviada com sucesso!');
-            this.reset();
+            event.preventDefault(); // Previne o envio do formulário
+            alert('Formulário enviado com sucesso!');
         });
     </script>
 </body>
 </html>
+
